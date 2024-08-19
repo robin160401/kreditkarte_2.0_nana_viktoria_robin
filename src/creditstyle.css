@@ -26,6 +26,15 @@ body {
   padding: 1em;
 }
 
+.chip&logo img {
+  width: 2px;
+  height: 2px;
+}
+
+.digits {
+  margin-left: 1.5em;
+}
+
 .details-container {
   display: flex;
   justify-content: space-between;
