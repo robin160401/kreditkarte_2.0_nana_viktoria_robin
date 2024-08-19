@@ -1,24 +1,60 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import CardDetails from "./classes/CardDetails";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const cardNumber = document.getElementById("card-number") as HTMLInputElement;
+const cardHolder = document.getElementById("card-holder") as HTMLInputElement;
+const expirationDate = document.getElementById("expiration-date") as HTMLInputElement;
+const cvv = document.getElementById("cvv") as HTMLInputElement;
+const form = document.getElementById("credit-form") as HTMLFormElement;
+const digitsH2tag = document.getElementById("digits") as HTMLHeadElement;
+const fullNameH2Tag = document.getElementById("fullName") as HTMLHeadElement;
+const dateH2Tag = document.getElementById("date") as HTMLHeadElement;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// function isValidDate(dateString: string): boolean {
+//   const date = new Date(dateString);
+//   return !isNaN(date.getTime());
+// }
+
+const arrayOfCreditCards: CardDetails[] = [];
+
+console.log(expirationDate.value);
+
+function validateInfos(event: Event){
+  event.preventDefault();
+  const cardNumberString = cardNumber.value;
+  const cvvString = cvv.value;
+  
+  if (cardNumberString.length !== 16){
+    window.alert("Card Number is Invalid")
+  } else if (cvvString.length !== 3){
+    window.alert("CVV is Invalid")
+  } else if (arrayOfCreditCards.length >= 5){
+    window.alert("Maximum Capacity is 5 Creditcards")
+  } else {
+    changeHTMLCreditcardsvalues();
+    createCreditcard();
+    createExtraCreditCard();
+    console.log(arrayOfCreditCards);
+  }
+}
+
+function createCreditcard(){
+  const creditcard = new CardDetails(Number(cardNumber.value), cardHolder.value, expirationDate.value, Number(cvv.value))
+  arrayOfCreditCards.push(creditcard);
+}
+
+form.addEventListener("submit", validateInfos);
+
+function changeHTMLCreditcardsvalues(){
+  digitsH2tag.textContent = cardNumber.value;
+  fullNameH2Tag.textContent = cardHolder.value;
+  dateH2Tag.textContent = expirationDate.value;
+}
+
+function createExtraCreditCard(){
+  for (let i = 0; i < arrayOfCreditCards.length - 1; i++){
+    const cardContainer = document.querySelector(".credit-card");
+    const copyCardContainer = cardContainer!.cloneNode(true);
+    document.body.appendChild(copyCardContainer);
+  }
+}
+
