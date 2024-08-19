@@ -16,3 +16,5 @@ class CardDetails {
     this._cvv = cvv;
   }
 }
+
+export default CardDetails;
