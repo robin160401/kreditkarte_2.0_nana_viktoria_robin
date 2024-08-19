@@ -20,20 +20,14 @@ body {
   border-radius: 10px;
 }
 
-.chip&logo {
+.chip {
   display: flex;
   justify-content: space-between;
   padding: 1em;
 }
 
-.chip&logo img {
-  width: 2px;
-  height: 2px;
-}
-
-.digits {
-  margin-left: 1.5em;
-}
+img {
+  height: 50px
 
 .details-container {
   display: flex;
@@ -54,6 +48,11 @@ form {
   padding: 8em 4em 8em 4em;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.digits {
+  padding-top: 3rem;
+  padding-left: 3rem;
 }
 
 input {
@@ -78,4 +77,9 @@ button {
   border-style: none;
   cursor: pointer;
   width: 40%;
+}
+
+p {
+  color: grey;
+
 }

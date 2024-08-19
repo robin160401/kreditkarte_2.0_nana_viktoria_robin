@@ -5,39 +5,35 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link
       rel="stylesheet"
-      href="/kreditkarte_2.0_nana_viktoria_robin/src/creditstyle.css"
+      href="src/creditstyle.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Creditcard</title>
   </head>
-  <body>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
-</html>
 
-<body>
-  <div class="credit-card">
-    <div class="chip&logo">
-      <img src="src/img/visa_chip.png" alt="" />
-      <img src="src/img/visa_logo.png" alt="" />
-    </div>
+  <body>
+    <div class="credit-card">
+      <div class="chip">
+        <img src="src/img/visa_chip.png" alt="" />
+        <img src="src/img/visa_logo.png" alt="" />
+      </div>
 
     <h2 class="digits" id="digits">#### #### #### ####</h2>
 
-    <div class="details-container">
-      <div class="details">
-        <p>Card Holder</p>
-        <h2 id="fullName">FULL NAME</h2>
-      </div>
+      <div class="details-container">
+        <div class="details">
+          <p>Card Holder</p>
+          <h2 id="fullName">FULL NAME</h2>
+        </div>
 
-      <div class="details">
-        <p>Expires</p>
-        <h2 id="date">MM/YY</h2>
+        <div class="details">
+          <p>Expires</p>
+          <h2 id="date">MM/YY</h2>
+        </div>
       </div>
     </div>
-  </div>
 
-  <form class="credit-form">
+  <form id="credit-form">
     <div class="input1">
       <label for="">Card Number</label>
       <input id="card-number" type="number" class="" />
@@ -47,10 +43,15 @@
 
     <div class="expiration&cvv">
       <label for="">Expiration Date</label><br />
-      <input id="expiration-date" type="date" class="" />
+      <input id="expiration-date" type="month" min="2024-08" class="" />
       <label for="">CVV</label>
       <input id="cvv" type="number" class="" />
     </div>
     <button type="submit">Submit</button>
   </form>
-</body>
+
+  <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
+
+
