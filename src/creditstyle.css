@@ -1,7 +1,13 @@
+body {
+  margin: 5em 25em 25em 25em;
+  background-color: rgb(244, 231, 231);
+}
+
 .credit-card {
   background-image: url(../src/img/background_creditcard.png);
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 10em 0em 10em 0em;
   border-radius: 10px;
 }
 
@@ -17,13 +23,19 @@
   padding: 1em;
 }
 
+.input1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 button {
-  background-color: #d14f8d;
+  background-color: #d14f67;
   color: white;
-  padding: 14px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
-  border-radius: 10px;
+  border-radius: 8px;
   border-style: none;
   cursor: pointer;
-  width: 100%;
+  width: 20%;
 }
