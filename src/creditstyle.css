@@ -1,0 +1,72 @@
+:root {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  margin: 5em 25em 25em 25em;
+  background-color: rgb(244, 231, 231);
+}
+
+.credit-card {
+  background-image: url(../src/img/background_creditcard.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 10em 0em 8em 0em;
+  border-radius: 10px;
+}
+
+.chip&logo {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.input1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+form {
+  align-items: center;
+  margin: 0em 2em 0em 2em;
+  background-color: white;
+  padding: 8em 4em 8em 4em;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+input {
+  padding: 10px;
+  margin: 8px 0px;
+  border-radius: 3px;
+  border: 1px solid rgb(162, 162, 162);
+}
+
+.expiration&cvv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button {
+  background-color: #e5696b;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border-style: none;
+  cursor: pointer;
+  width: 40%;
+}
