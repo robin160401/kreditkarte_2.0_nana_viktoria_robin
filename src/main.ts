@@ -1,24 +1,35 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const cardNumber = document.getElementById("card-number") as HTMLInputElement;
+const cardHolder = document.getElementById("card-holder") as HTMLInputElement;
+const expirationDate = document.getElementById("expiration-date") as HTMLInputElement;
+const cvv = document.getElementById("cvv") as HTMLInputElement;
+const form = document.getElementById("credit-form") as HTMLFormElement;
+
+// function isValidDate(dateString: string): boolean {
+//   const date = new Date(dateString);
+//   return !isNaN(date.getTime());
+// }
+
+
+console.log(expirationDate.value);
+
+function validateInfos(){
+  const cardNumberString = cardNumber.value;
+  const cvvString = cvv.value;
+  
+  if (cardNumberString.length !== 16){
+    window.alert("Card Number is Invalid")
+  } else if (cvvString.length !== 3){
+    window.alert("CVV is Invalid")
+
+    // hier später date volidierung hinzufügen
+  } else {
+    createClass();
+  }
+
+}
+
+function createCreditcard(){
+  console.log("hi")
+}
