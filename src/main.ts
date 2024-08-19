@@ -34,7 +34,6 @@ function validateInfos(event: Event) {
     window.alert("Maximum Capacity is 5 Creditcards");
   } else {
     changeHTMLCreditcardsvalues();
-    createCreditcard();
     cardNumber.value = " ";
     cardHolder.value = " ";
     cvv.value = " ";
@@ -43,7 +42,7 @@ function validateInfos(event: Event) {
   }
 }
 
-function createCreditcard() {
+function changeHTMLCreditcardsvalues() {
   const creditcard = new CardDetails(
     Number(cardNumber.value),
     cardHolder.value,
@@ -51,11 +50,8 @@ function createCreditcard() {
     Number(cvv.value)
   );
   arrayOfCreditCards.push(creditcard);
-}
-
-function changeHTMLCreditcardsvalues() {
   const numberWithSpaces = [];
-  const cardNumberString = cardNumber.value.toString();
+  const cardNumberString = creditcard._cardNumber.toString();
   const cardNumberArray = cardNumberString.split("");
 
   console.log(cardNumberArray);
@@ -69,17 +65,14 @@ function changeHTMLCreditcardsvalues() {
 
   const finalNumber = numberWithSpaces.join("");
   digitsH2tag.textContent = finalNumber;
-  fullNameH2Tag.textContent = cardHolder.value;
-  dateH2Tag.textContent = expirationDate.value
-    .replace("-", "/")
-    .replace("20", "");
+  fullNameH2Tag.textContent = creditcard._fullName;
+  dateH2Tag.textContent = creditcard._expireDate.replace("-", "/").replace("20", "");
 }
 
 function createExtraCreditCard() {
-  const cardContainer = document.querySelector(".credit-card");
-  const copyCardContainer = cardContainer!.cloneNode(true);
-
-  mainContainer.appendChild(copyCardContainer);
+    const cardContainer = document.querySelector(".credit-card");
+    const copyCardContainer = cardContainer!.cloneNode(true);
+    mainContainer.appendChild(copyCardContainer);
 }
 
 form.addEventListener("submit", validateInfos);
