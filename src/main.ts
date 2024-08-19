@@ -42,8 +42,6 @@ function createCreditcard(){
   arrayOfCreditCards.push(creditcard);
 }
 
-form.addEventListener("submit", validateInfos);
-
 function changeHTMLCreditcardsvalues(){
   digitsH2tag.textContent = cardNumber.value;
   fullNameH2Tag.textContent = cardHolder.value;
@@ -51,10 +49,9 @@ function changeHTMLCreditcardsvalues(){
 }
 
 function createExtraCreditCard(){
-  for (let i = 0; i < arrayOfCreditCards.length - 1; i++){
-    const cardContainer = document.querySelector(".credit-card");
-    const copyCardContainer = cardContainer!.cloneNode(true);
-    document.body.appendChild(copyCardContainer);
-  }
+  const cardContainer = document.querySelector(".credit-card");
+  const copyCardContainer = cardContainer!.cloneNode(true);
+  document.body.appendChild(copyCardContainer); 
 }
 
+form.addEventListener("submit", validateInfos);
