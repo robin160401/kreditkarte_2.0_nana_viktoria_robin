@@ -3,22 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link
-      rel="stylesheet"
-      href="src/creditstyle.css"
-    />
+    <link rel="stylesheet" href="src/creditstyle.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Creditcard</title>
   </head>
 
   <body>
+    <div id="container"></div>
     <div class="credit-card">
       <div class="chip">
         <img src="src/img/visa_chip.png" alt="" />
         <img src="src/img/visa_logo.png" alt="" />
       </div>
 
-    <h2 class="digits" id="digits">#### #### #### ####</h2>
+      <h2 class="digits" id="digits">#### #### #### ####</h2>
 
       <div class="details-container">
         <div class="details">
@@ -33,25 +31,23 @@
       </div>
     </div>
 
-  <form id="credit-form">
-    <div class="input1">
-      <label for="">Card Number</label>
-      <input id="card-number" type="number" class="" />
-      <label for="">Card Holder</label>
-      <input id="card-holder" type="text" class="" />
-    </div>
+    <form id="credit-form">
+      <div class="input1">
+        <label for="">Card Number</label>
+        <input id="card-number" type="number" class="" />
+        <label for="">Card Holder</label>
+        <input id="card-holder" type="text" class="" />
+      </div>
 
-    <div class="expiration&cvv">
-      <label for="">Expiration Date</label><br />
-      <input id="expiration-date" type="month" min="2024-08" class="" />
-      <label for="">CVV</label>
-      <input id="cvv" type="number" class="" />
-    </div>
-    <button type="submit">Submit</button>
-  </form>
+      <div class="expiration&cvv">
+        <label for="">Expiration Date</label><br />
+        <input id="expiration-date" type="month" min="2024-08" class="" />
+        <label for="">CVV</label>
+        <input id="cvv" type="number" class="" />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
 
-  <script type="module" src="src/main.ts"></script>
+    <script type="module" src="src/main.ts"></script>
   </body>
 </html>
-
-
