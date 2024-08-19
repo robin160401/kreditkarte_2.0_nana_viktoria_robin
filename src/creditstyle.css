@@ -1,0 +1,18 @@
+.credit-card {
+  background-image: url(../src/img/background_creditcard.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.chip&logo {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
