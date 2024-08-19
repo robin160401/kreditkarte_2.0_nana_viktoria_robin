@@ -43,9 +43,23 @@ function createCreditcard(){
 }
 
 function changeHTMLCreditcardsvalues(){
-  digitsH2tag.textContent = cardNumber.value;
+  const numberWithSpaces = [];
+  const cardNumberString = cardNumber.value.toString();
+  const cardNumberArray = cardNumberString.split("");
+
+  console.log(cardNumberArray);
+
+  for (let i = 1, j = 0; i < cardNumberString.length + 1; i++, j++){
+    numberWithSpaces.push(cardNumberArray[j]);
+    if (i % 4 === 0 && i !== 0){
+      numberWithSpaces.push(" ");
+    }
+}
+
+  const finalNumber = numberWithSpaces.join("");
+  digitsH2tag.textContent = finalNumber;
   fullNameH2Tag.textContent = cardHolder.value;
-  dateH2Tag.textContent = expirationDate.value;
+  dateH2Tag.textContent = expirationDate.value.replace("-", "/").replace("20", "");
 }
 
 function createExtraCreditCard(){
@@ -53,5 +67,6 @@ function createExtraCreditCard(){
   const copyCardContainer = cardContainer!.cloneNode(true);
   document.body.appendChild(copyCardContainer); 
 }
+
 
 form.addEventListener("submit", validateInfos);

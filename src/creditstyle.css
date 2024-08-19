@@ -27,7 +27,8 @@ body {
 }
 
 img {
-  height: 50px
+  height: 50px;
+}
 
 .details-container {
   display: flex;
@@ -81,5 +82,4 @@ button {
 
 p {
   color: grey;
-
 }
