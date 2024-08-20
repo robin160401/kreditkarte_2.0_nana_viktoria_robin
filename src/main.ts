@@ -14,7 +14,7 @@ const mainContainer = document.getElementById("container") as HTMLDivElement;
 
 const arrayOfCreditCards: CardDetails[] = [];
 
-function validateInfos(event: Event) {
+function main(event: Event) {
   event.preventDefault();
   const cardNumberString = cardNumber.value;
   const cvvString = cvv.value;
@@ -61,7 +61,7 @@ function createExtraCreditCard() {
   mainContainer.appendChild(cardContainer);
 }
 
-form.addEventListener("submit", validateInfos);
+form.addEventListener("submit", main);
 
 function changeCardNumber(cardNumber: string): string {
   const numberWithSpaces = [];
