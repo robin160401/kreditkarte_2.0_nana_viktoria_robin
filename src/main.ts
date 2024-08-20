@@ -35,7 +35,10 @@ function validateInfos(event: Event) {
   } else {
     changeHTMLCreditcardsvalues();
     createCreditCard();
-    createExtraCreditCard();
+    if (arrayOfCreditCards.length != 5)
+      {
+        createExtraCreditCard();
+      }
     console.log(arrayOfCreditCards);
   }
 }
