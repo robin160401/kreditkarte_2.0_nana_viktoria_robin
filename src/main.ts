@@ -12,14 +12,7 @@ const fullNameH2Tag = document.getElementById("fullName") as HTMLHeadElement;
 const dateH2Tag = document.getElementById("date") as HTMLHeadElement;
 const mainContainer = document.getElementById("container") as HTMLDivElement;
 
-// function isValidDate(dateString: string): boolean {
-//   const date = new Date(dateString);
-//   return !isNaN(date.getTime());
-// }
-
 const arrayOfCreditCards: CardDetails[] = [];
-
-console.log(expirationDate.value);
 
 function validateInfos(event: Event) {
   event.preventDefault();
