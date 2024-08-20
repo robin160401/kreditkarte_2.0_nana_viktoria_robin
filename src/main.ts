@@ -68,7 +68,7 @@ function changeCardNumber(cardNumber: string): string {
   const cardNumberArray = cardNumber.split("");
   for (let i = 1, j = 0; i < cardNumber.length + 1; i++, j++) {
     numberWithSpaces.push(cardNumberArray[j]);
-    if (i % 4 === 0 && i !== 0) {
+    if (i % 4 === 0) {
       numberWithSpaces.push(" ");
     }
   }
