@@ -35,8 +35,7 @@ function validateInfos(event: Event) {
   } else {
     changeHTMLCreditcardsvalues();
     createCreditCard();
-    if (arrayOfCreditCards.length != 5)
-      {
+    if (arrayOfCreditCards.length != 5){
         createExtraCreditCard();
       }
     console.log(arrayOfCreditCards);
@@ -74,16 +73,12 @@ form.addEventListener("submit", validateInfos);
 function changeCardNumber(cardNumber: string): string {
   const numberWithSpaces = [];
   const cardNumberArray = cardNumber.split("");
-
-  console.log(cardNumberArray);
-
   for (let i = 1, j = 0; i < cardNumber.length + 1; i++, j++) {
     numberWithSpaces.push(cardNumberArray[j]);
     if (i % 4 === 0 && i !== 0) {
       numberWithSpaces.push(" ");
     }
   }
-
   const finalNumber = numberWithSpaces.join("");
   return finalNumber;
 }
