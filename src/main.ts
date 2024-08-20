@@ -30,8 +30,7 @@ function main(event: Event) {
     createCreditCard();
     if (arrayOfCreditCards.length != 5){
         createExtraCreditCard();
-      }
-    console.log(arrayOfCreditCards);
+    }
   }
 }
 
